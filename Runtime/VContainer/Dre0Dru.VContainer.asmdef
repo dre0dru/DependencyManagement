@@ -1,0 +1,24 @@
+{
+    "name": "Dre0Dru.VContainer",
+    "rootNamespace": "Dre0Dru.VContainer",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "VCONTAINER_SUPPORT"
+    ],
+    "versionDefines": [
+        {
+            "name": "jp.hadashikick.vcontainer",
+            "expression": "",
+            "define": "VCONTAINER_SUPPORT"
+        }
+    ],
+    "noEngineReferences": false
+}

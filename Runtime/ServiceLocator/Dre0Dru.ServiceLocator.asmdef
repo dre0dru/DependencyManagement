@@ -1,0 +1,22 @@
+{
+    "name": "Dre0Dru.ServiceLocator",
+    "rootNamespace": "Dre0Dru.ServiceLocator",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "jp.hadashikick.vcontainer",
+            "expression": "",
+            "define": "VCONTAINER_SUPPORT"
+        }
+    ],
+    "noEngineReferences": false
+}
