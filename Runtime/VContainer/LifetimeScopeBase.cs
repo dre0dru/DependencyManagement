@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -12,32 +13,62 @@ namespace Dre0Dru.VContainer
         [SerializeField]
         private ScriptableInstaller[] _scriptableInstallers;
 
-        protected override void Configure(IContainerBuilder builder)
+        protected sealed override void Configure(IContainerBuilder builder)
         {
-            foreach (var scope in _monoInstallers)
+            try
             {
-                scope.Install(builder);
-            }
+                foreach (var scope in _monoInstallers)
+                {
+                    scope.Install(builder);
+                }
 
-            foreach (var scope in _scriptableInstallers)
+                foreach (var scope in _scriptableInstallers)
+                {
+                    scope.Install(builder);
+                }
+                
+                OnConfigure(builder);
+            }
+            catch (Exception e)
             {
-                scope.Install(builder);
+                Debug.LogException(e);
+                throw;
             }
         }
 
-        protected override void OnDestroy()
+        protected virtual void OnConfigure(IContainerBuilder builder)
+        {
+            
+        }
+
+        protected sealed override void OnDestroy()
         {
             base.OnDestroy();
-            
-            foreach (var scope in _monoInstallers)
-            {
-                scope.Dispose();
-            }
 
-            foreach (var scope in _scriptableInstallers)
+            try
             {
-                scope.Dispose();
+                foreach (var scope in _monoInstallers)
+                {
+                    scope.Dispose();
+                }
+
+                foreach (var scope in _scriptableInstallers)
+                {
+                    scope.Dispose();
+                }
+                
+                OnDispose();
             }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+                throw;
+            }
+        }
+
+        protected virtual void OnDispose()
+        {
+            
         }
     }
 }
