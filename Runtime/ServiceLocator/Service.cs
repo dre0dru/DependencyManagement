@@ -1,5 +1,6 @@
 namespace Dre0Dru.ServiceLocator
 {
+    //TODO extensions that return IDisposable registration to clear service
     public class Service<T>
         where T : class
     {

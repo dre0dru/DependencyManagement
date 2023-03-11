@@ -31,7 +31,7 @@ namespace Dre0Dru.VContainer
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
+                Debug.LogError($"Error during configuration in [{GetType()}]: {e}");
                 throw;
             }
         }
